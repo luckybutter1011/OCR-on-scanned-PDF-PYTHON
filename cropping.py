@@ -13,10 +13,10 @@ images = glob.glob("./Retrieve/*.jpg")
 # h = 4200
 # image for cropping the description and size
 # description, size, ITEMCODE, QTY
-x = [6100, 7125, 7300, 7665]
-y = [500, 500, 500, 500]
-w = [1000, 175, 365, 250]
-h = [3750, 3750, 3750, 3750]
+x = [6100, 7125, 7300, 7665, 7300]
+y = [500, 500, 500, 500, 500]
+w = [1000, 175, 365, 250, 615]
+h = [3750, 3750, 3750, 3750, 3750]
 
 for image in images:
         img=cv2.imread(image,1)
@@ -26,7 +26,7 @@ for image in images:
         print("Image width:", width)
         print("Image height:", height)       
 
-        for i in range(4):
+        for i in range(5):
                 crop_img = img[y[i]:y[i]+h[i], x[i]:x[i]+w[i]]
                 filename = "./Cropped/crop"+str(image_counter)+"_"+str(i)+".jpg"        
                 cv2.imwrite(filename,crop_img)
