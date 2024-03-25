@@ -1,0 +1,122 @@
+PIPE
+4 PIPE: CS, ASTM A106 Grade B, Seamless, PLatn
+Botm Encs, 2c 160
+FITTINGS
+2 FITTING: CS, ASTM A105, Tee, Socketweld, Class
+6000
+8 FITTING: CS, ASTM A105, Reductng Tee,
+Socketweld, Class 6000
+4 FITTING: CS, ASTM A234 Grade WPBS, Concentric
+Swage, Platn Both Ends, SCH 160 X SCH 160
+5 FITTING: CS, ASTM A105, 90 Degree ELbow,
+Socketweld, Class 6000
+6 NIPPLE: CS, ASTM A106 Grade B, Seamless, 3
+Long, Threaded One End, Sch 160
+Z FITTING: CS, ASTM A105, 90 Degree Elbow,
+Socketweld, Class 6000
+FLANGES
+8 FLANGES: CS, ASTM A105, Socketweld per ASME
+B16.5, Ralsed Face,Class 150, Sch 160
+VALVES / INLINE ITEMS
+9 GATE VALVE, CLASS 800, MSW/FNPT, OS&Y, CS
+A105), BB, MFR DIMS, EXT BODY, API 602, TRIM
+8, 13CR STEM, REDUCED PORT, SOLID WEDGE, FG
+PACKING, HANDWHEEL OPERATOR CS A105
+FIELD MATERIALS
+i COMPONENT DESCRIPTION
+@)
+FITTINGS
+10 FITTING: CS, ASTM A105, 4 Long,Round Head
+Plug, Socketweld, Class 6000
+11 FITTING: CS, ASTM A105, Plug, Round Head,
+Threaded
+12 FITTING: CS, ASTM A105, Cap, Threaded, Class
+3000
+GASKETS
+13 GASKET: 316L SS with SS Inner & CS Outer Ring
+& Flextble Graphtte FlLLer,Sptral Wound, per
+ASME B16.20 for ASME B16.5 flange, Class
+150,Maxtmum Operating Temperature of 975F in
+Nonoxtdtiztng Medta
+BOLTS
+14 2.1/2 BOLTING: ASTM A193 Grade B7 / ASTM A194
+Grade 2H, Stud Bolts wlth 2 hvy hex nuts, 40F
+6 BOCF
+SUPPORTS
+1S UBoLt Gutde/ Anchor for Bare Plpe UBO1B1"A
+Carbon Steel
+16 Dummy Leg support ,DLO1
+Carbon Steel
+
+1
+
+1 #4
+
+1 x 3/4
+1 x 3/4
+q
+
+3/4
+3/4
+
+1
+
+3/4
+SLZE
+CIN)
+
+1
+
+3/4
+3/4
+
+1
+
+1/2
+
+1
+
+1
+
+21400D00
+30132N0000
+301Y2NO0000
+201G40SWED
+30112NO0000
+4021500D00
+
+301 12NO0000
+1015210D00
+PVGC1A80PFOOBQ02C
+BO3
+
+TTEMCODE
+
+301 P300000
+30143M0000
+
+735401 00TA
+80220D0000
+UBO1B1"A
+
+DLO aB=Ts86"=Cs
+
+7861 /4"
+1
+5
+1
+
+1
+1
+7
+3
+
+QTY
+
+1
+1
+4
+16
+9
+1
+
