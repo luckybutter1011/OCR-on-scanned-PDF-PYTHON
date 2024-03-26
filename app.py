@@ -1,10 +1,12 @@
-from flask import Flask, request, redirect, url_for, render_template
+from flask import Flask, request, render_template, jsonify
 from werkzeug.utils import secure_filename
 import os
 
 from readpdf import pdf_to_img
 from cropping import crop_image
 from ocr import ocr_image
+
+from getarray import *
 
 app = Flask(__name__)
 path = 'uploads'
@@ -28,8 +30,12 @@ def upload_file():
         pdf_to_img(filename)
         crop_image(filename)
         ocr_image(filename)
-        print(filename)
-        return 'File uploaded successfully', 200
+        
+        des_shop_array, des_field_array = get_des()
+        itemcode_array, qty_array = get_itemcode()
+        size_array = get_size()
+        
+    return render_template('show.html', des_shop_array=des_shop_array, des_field_array=des_field_array, itemcode_array=itemcode_array, size_array=size_array, qty_array=qty_array)
 
 if __name__ == '__main__':
     app.run(debug=True)
