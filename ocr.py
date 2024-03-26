@@ -17,7 +17,7 @@ for image in images:
     thresh = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     invert = 255 - thresh    
     # img = Image.open(invert)
-    data = pytesseract.image_to_string(invert, lang='eng', config='--oem 3 --psm 6')
+    data = pytesseract.image_to_string(invert, lang='eng', config='--psm 6')
     cleaned_data = data
     for char in characters_to_remove:
         cleaned_data = cleaned_data.replace(char, '')
