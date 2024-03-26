@@ -12,7 +12,7 @@ os.makedirs(path2, exist_ok=True)
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 # characters_to_remove = ['‘', '|', '-', '(', ';', '}', '+', '—', '”', '“', '°']
-characters_to_remove = ['‘', '|', ';', '}', '+', '“', '°', '”']
+characters_to_remove = ['‘', '|', ';', '}', '+', '“', '°', '”', '=']
 
 def ocr_image(pdf_name):
     images = glob.glob("./cropped/"+pdf_name+"/*.jpg")
