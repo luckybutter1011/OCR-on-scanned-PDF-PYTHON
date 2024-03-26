@@ -4,6 +4,7 @@ import os
 
 from readpdf import pdf_to_img
 from cropping import crop_image
+from ocr import ocr_image
 
 app = Flask(__name__)
 path = 'uploads'
@@ -26,6 +27,7 @@ def upload_file():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         pdf_to_img(filename)
         crop_image(filename)
+        ocr_image(filename)
         print(filename)
         return 'File uploaded successfully', 200
 
