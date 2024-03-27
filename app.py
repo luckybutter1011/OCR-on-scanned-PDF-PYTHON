@@ -28,7 +28,10 @@ def upload_file():
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         pdf_to_img(filename)
-        crop_image(filename)
+        flag = crop_image(filename)
+        
+        if flag is not True:
+            return render_template('upload.html', error=True)
         ocr_image(filename)
         
         des_shop_array, des_field_array = get_des()

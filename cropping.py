@@ -38,13 +38,17 @@ def crop_image(pdf_name):
                 print("Image width:", width)
                 print("Image height:", height)       
 
-                for i in range(5):
-                        crop_img = img[y[i]:y[i]+h[i], x[i]:x[i]+w[i]]
-                        filename = "cropped/"+pdf_name+"/crop"+str(image_counter)+"_"+str(i)+".jpg"        
-                        cv2.imwrite(filename,crop_img)
-                        # print (filename)
+                try:
+                        for i in range(5):
+                                crop_img = img[y[i]:y[i]+h[i], x[i]:x[i]+w[i]]
+                                filename = "cropped/"+pdf_name+"/crop"+str(image_counter)+"_"+str(i)+".jpg"        
+                                cv2.imwrite(filename,crop_img)
+                except:
+                        return False 
+                # print (filename)
                 #cv2.imshow('windo',crop_img)
                 image_counter = image_counter + 1
+                return True
 
 
 # crop_image("03GI-27.1_C02_REV0.pdf")
