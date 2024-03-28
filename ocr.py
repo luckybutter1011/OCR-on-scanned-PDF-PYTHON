@@ -25,13 +25,13 @@ def ocr_image(pdf_name):
         blur = cv2.GaussianBlur(gray, (3,3), 0)
         thresh = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
         invert = 255 - thresh    
-        # img = Image.open(invert)
-        data = pytesseract.image_to_string(invert, lang='eng', config='--psm 6')
+        data = pytesseract.image_to_string(invert, lang='eng', config='--psm 6 --oem 3')
         cleaned_data = data
+
         for char in characters_to_remove:
             cleaned_data = cleaned_data.replace(char, '')
+            
         with open(f'extract/text_{image_counter}.txt', 'w') as file:
             file.write(cleaned_data)
+            
         image_counter = image_counter + 1
-
-# ocr_image("03GI-27.1_C02_REV0.pdf")

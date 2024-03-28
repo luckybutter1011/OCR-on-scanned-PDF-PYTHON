@@ -41,4 +41,5 @@ def upload_file():
     return render_template('show.html', des_shop_array=des_shop_array, des_field_array=des_field_array, itemcode_array=itemcode_array, size_array=size_array, qty_array=qty_array)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

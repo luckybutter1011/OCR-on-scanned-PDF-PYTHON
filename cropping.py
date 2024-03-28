@@ -9,11 +9,6 @@ os.makedirs(path, exist_ok=True)
 # images = glob.glob("./rotating/*.jpg")
 # images = glob.glob("./Retrieve/*.jpg")
 
-x = [6060, 7140, 7300, 7660, 7300]
-y = [150, 150, 150, 150, 150]
-w = [1080, 160, 360, 250, 610]
-h = [4100, 4100, 4100, 4100, 4100]
-
 # x = 6000
 # y = 100
 # w = 2000
@@ -36,19 +31,30 @@ def crop_image(pdf_name):
                 height, width, channels = img.shape
 
                 print("Image width:", width)
-                print("Image height:", height)       
+                print("Image height:", height)  
 
+                # Set the crop width and height
+                if width > 9000:     
+                        x = [9060, 8560, 10300, 11100]
+                        y = [150, 150, 150, 150]
+                        w = [2000, 580, 610, 300]
+                        h = [7000, 7000, 7000, 7000]
+                else:
+                        x = [6060, 7140, 7300, 7660]
+                        y = [150, 150, 150, 150]
+                        w = [1080, 160, 610, 250]
+                        h = [4100, 4100, 4100, 4100]
+                
+                # Crop the image   
                 try:
-                        for i in range(5):
+                        for i in range(4):
                                 crop_img = img[y[i]:y[i]+h[i], x[i]:x[i]+w[i]]
                                 filename = "cropped/"+pdf_name+"/crop"+str(image_counter)+"_"+str(i)+".jpg"        
                                 cv2.imwrite(filename,crop_img)
+                                image_counter = image_counter + 1
                 except:
                         return False 
-                # print (filename)
-                #cv2.imshow('windo',crop_img)
-                image_counter = image_counter + 1
-                return True
+        return True
 
 
 # crop_image("03GI-27.1_C02_REV0.pdf")
