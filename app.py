@@ -25,8 +25,9 @@ def upload_file():
     if file.filename == '':
         return 'No selected file', 400
     if file:
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        # filename = secure_filename(file.filename)
+        filename = "upload.pdf"
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], "upload.pdf"))
         pdf_to_img(filename)
         flag = crop_image(filename)
         

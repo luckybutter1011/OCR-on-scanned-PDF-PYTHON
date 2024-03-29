@@ -7,6 +7,9 @@ size_array = []
 des_shop_array = []
 des_field_array = []
 
+path = 'variable'
+os.makedirs(path, exist_ok=True)
+
 def get_itemcode():
     try:
         temp_array1 = []
