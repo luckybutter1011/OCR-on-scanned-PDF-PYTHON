@@ -35,9 +35,9 @@ def crop_image(pdf_name):
 
                 # Set the crop width and height
                 if width > 9000:     
-                        x = [9060, 8560, 10300, 11100]
+                        x = [9060, 8760, 10300, 11100]
                         y = [150, 150, 150, 150]
-                        w = [2000, 580, 610, 300]
+                        w = [2000, 380, 610, 300]
                         h = [7000, 7000, 7000, 7000]
                 else:
                         x = [6060, 7140, 7300, 7660]
@@ -57,4 +57,4 @@ def crop_image(pdf_name):
         return True
 
 
-# crop_image("03GI-27.1_C02_REV0.pdf")
+# crop_image("upload.pdf")
