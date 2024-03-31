@@ -29,6 +29,7 @@ def ocr_image(pdf_name):
 
         if height > 5000 and (image == "./cropped/upload.pdf\crop2_1.jpg" or image == "./cropped/upload.pdf\crop4_3.jpg"):
             data = ocr_table(image)
+            # pass
         else:
             gray = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2GRAY)
             blur = cv2.GaussianBlur(gray, (3,3), 0)
@@ -47,4 +48,4 @@ def ocr_image(pdf_name):
             
         image_counter = image_counter + 1
 
-ocr_image("upload.pdf")
+# ocr_image("upload.pdf")
