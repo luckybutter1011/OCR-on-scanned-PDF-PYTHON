@@ -7,16 +7,18 @@ import os
 
 from ocr_table import ocr_table
 
-path = 'cropped'
-os.makedirs(path, exist_ok=True)
-path2 = 'extract'
-os.makedirs(path2, exist_ok=True)
+
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 # characters_to_remove = ['‘', '|', '-', '(', ';', '}', '+', '—', '”', '“', '°']
 characters_to_remove = ['‘', '|', ';', '}', '+', '“', '°', '”', '=']
 
 def ocr_image(pdf_name):
+
+    path = 'cropped'
+    os.makedirs(path, exist_ok=True)
+    path2 = 'extract'
+    os.makedirs(path2, exist_ok=True)
     images = glob.glob("./cropped/"+pdf_name+"/*.jpg")
     image_counter = 1
     # height, width, channels = images.shape
@@ -49,4 +51,4 @@ def ocr_image(pdf_name):
             
         image_counter = image_counter + 1
 
-ocr_image("upload.pdf")
+# ocr_image("upload.pdf")
