@@ -39,6 +39,7 @@ def ocr_image(pdf_name):
             data = pytesseract.image_to_string(invert, lang='eng', config='--psm 6 --oem 3')
 
         cleaned_data = data
+        # print("cleaned", cleaned_data)
 
         for char in characters_to_remove:
             cleaned_data = cleaned_data.replace(char, '')
@@ -48,4 +49,4 @@ def ocr_image(pdf_name):
             
         image_counter = image_counter + 1
 
-# ocr_image("upload.pdf")
+ocr_image("upload.pdf")
