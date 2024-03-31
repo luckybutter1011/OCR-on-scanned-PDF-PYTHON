@@ -80,6 +80,12 @@ def ocr_table(file):
             cell = thresh[y:y+h, x:x+w]
             cell = cell[10:-10, 10:-10]
             cells.append(cell)
+        elif (file == "./cropped/upload.pdf\crop1_0.jpg" and ((w>1500 and w<2200) and (h>200 and h<500))):
+            k+=1
+            cv2.rectangle(im, (x, y), (x+w, y+h), (0, 0, 255), 3)
+            cell = thresh[y:y+h, x:x+w]
+            cell = cell[2:-2, 2:-2]
+            cells.append(cell)
         
     # print("cells----")
     ocr_text = []
@@ -90,8 +96,10 @@ def ocr_table(file):
         eroded_cell = cv2.erode(dilated_cell, kernel, iterations=1)
         if file == "./cropped/upload.pdf\crop2_1.jpg":
             image = dilated_cell
-        else:
+        elif file == "./cropped/upload.pdf\crop4_3.jpg":
             image = eroded_cell
+        elif file == "./cropped/upload.pdf\crop1_0.jpg":
+            image = cell
 
         # cv2.imwrite("aaa/aaa"+str(j)+".bmp", eroded_cell)
         j+=1        # text = pytesseract.image_to_string(dilated_cell, config='--oem 3 --psm 6')

@@ -29,7 +29,8 @@ def ocr_image(pdf_name):
         bgr_image = cv2.imread(image)
         height, width, channels = bgr_image.shape
 
-        if height > 5000 and (image == "./cropped/upload.pdf\crop2_1.jpg" or image == "./cropped/upload.pdf\crop4_3.jpg"):
+        if height > 5000:
+        # if height > 5000 and (image == "./cropped/upload.pdf\crop2_1.jpg" or image == "./cropped/upload.pdf\crop4_3.jpg"):
             data = ocr_table(image)
             # pass
         else:
@@ -51,4 +52,4 @@ def ocr_image(pdf_name):
             
         image_counter = image_counter + 1
 
-# ocr_image("upload.pdf")
+ocr_image("upload.pdf")
