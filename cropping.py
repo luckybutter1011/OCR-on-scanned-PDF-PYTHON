@@ -30,8 +30,8 @@ def crop_image(pdf_name):
 
                 height, width, channels = img.shape
 
-                print("Image width:", width)
-                print("Image height:", height)  
+                # print("Image width:", width)
+                # print("Image height:", height)  
 
                 # Set the crop width and height
                 if width > 9000:     

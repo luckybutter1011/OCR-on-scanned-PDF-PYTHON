@@ -25,7 +25,7 @@ def ocr_image(pdf_name):
     
     for image in images:
         # preprocessing the image
-        print("image name-->", image)
+        # print("image name-->", image)
         bgr_image = cv2.imread(image)
         height, width, channels = bgr_image.shape
 

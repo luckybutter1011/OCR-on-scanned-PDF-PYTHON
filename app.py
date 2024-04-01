@@ -41,7 +41,7 @@ def upload_file():
             des_shop_array, des_field_array = get_des_7000(length)
             qty_array = get_itemcode_7000()
             
-            return render_template('show.html', des_shop_array=des_shop_array, des_field_array=des_field_array, qty_array=qty_array)
+            return render_template('show.html', des_shop_array=des_shop_array, des_field_array=des_field_array, qty_array=qty_array, size_array=size_array)
         
         if flag == 2:
             des_shop_array, des_field_array = get_des()

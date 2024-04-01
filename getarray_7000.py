@@ -20,6 +20,8 @@ def replace_special_chars(text):
     pattern = r'-(?=—)'
     modified_text = re.sub(pattern, '', text)
     modified_text = re.sub('—', '-', modified_text)
+    pattern_end = r'\)$'  # Pattern to remove ")" at the end of the string
+    modified_text = re.sub(pattern_end, '', modified_text)
     
     return modified_text
 
@@ -28,10 +30,10 @@ def get_itemcode_7000():
         with open('extract/text_4.txt', 'r') as file:
             lines = file.readlines()
             lines_cv = [line for line in lines if line.strip()]
-            print(lines_cv)
+            # print(lines_cv)
             patterns = {'ss)': '5', 'rs)': '5', 'x)': '3'}
             temp_array = [replace_patterns(s, patterns) for s in lines_cv]
-            print(temp_array)
+            # print(temp_array)
             pattern = r'[^0-9/+\-x]+'
             modified_array = [re.sub(pattern, '', s) for s in temp_array]
             modified_array = modified_array[::-1]
@@ -56,7 +58,8 @@ def get_size_7000():
             temp_array = [line for line in lines_cv if re.match(pattern1, line)]
             pattern2 = r'[^0-9/+\-x]+'
             temp_array = [re.sub(pattern2, '', s) for s in temp_array]
-            return(len, temp_array)
+            modified_lines = [ line.replace('9', '2') if line == '9' else line for line in temp_array ]
+            return(len, modified_lines)
             
     except:
         return(0, [])
