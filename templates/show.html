@@ -18,8 +18,12 @@
                       <tr>
                         <th class="px-4 py-2"></th>
                         <th class="px-4 py-2"></th>
+                        {% if size_array %}
                         <th class="px-4 py-2">Size(inch)</th>
+                        {% endif %}
+                        {% if itemcode_array %}
                         <th class="px-4 py-2">Item Code</th>
+                        {% endif %}
                         <th class="px-4 py-2">Qty</th>
                       </tr>
                     </thead>
@@ -30,16 +34,20 @@
                         <td class="px-4 py-2">
                             {{ i+1 }}. {{ des_shop_array[i] }}
                         </td>
+                        {% if size_array %}
                         <td class="px-4 py-2">
                             <div class="w-full h-full flex justify-center">
                             {{ size_array[i] }}
                             </div>
                         </td>
+                        {% endif %}
+                        {% if itemcode_array %}
                         <td class="px-4 py-2">
                             <div class="w-full h-full flex justify-center">
                             {{ itemcode_array[i] }}
                             </div>
                         </td>
+                        {% endif %}
                         <td class="px-4 py-2">
                             <div class="w-full h-full flex justify-center">
                             {{ qty_array[i] }}
@@ -58,8 +66,12 @@
                       <tr>
                         <th class="px-4 py-2"></th>
                         <th class="px-4 py-2"></th>
+                        {% if size_array %}
                         <th class="px-4 py-2">Size</th>
+                        {% endif %}
+                        {% if itemcode_array %}
                         <th class="px-4 py-2">Item Code</th>
+                        {% endif %}
                         <th class="px-4 py-2">Qty</th>
                       </tr>
                     </thead>
@@ -70,19 +82,23 @@
                         <td class="px-4 py-2">
                             {{ i+1 }}. {{ des_field_array[i] }}
                         </td>
+                        {% if size_array %}
                         <td class="px-4 py-2">
                             <div class="w-full h-full flex justify-center">
-                            {{ size_array[i] }}
+                            {{ size_array[i + des_shop_array|length ] }}
                             </div>
                         </td>
+                        {% endif %}
+                        {% if itemcode_array %}
                         <td class="px-4 py-2">
                             <div class="w-full h-full flex justify-center">
-                            {{ itemcode_array[i] }}
+                            {{ itemcode_array[i + des_shop_array|length] }}
                             </div>
                         </td>
+                        {% endif %}
                         <td class="px-4 py-2">
                             <div class="w-full h-full flex justify-center">
-                            {{ qty_array[i] }}
+                            {{ qty_array[i + des_shop_array|length] }}
                             </div>
                         </td>
                         </tr>

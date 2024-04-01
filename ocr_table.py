@@ -74,7 +74,7 @@ def ocr_table(file):
             cells.append(result)
         
             # cv2.imwrite("aaa/aaa"+str(k)+".bmp", result)
-        elif (file == "./cropped/upload.pdf\crop2_1.jpg" and ((w>50 and w<500) and (h>200 and h<500))):
+        elif (file == "./cropped/upload.pdf\crop2_1.jpg" and ((w>50 and w<500) and (h>100 and h<500))):
             k+=1
             cv2.rectangle(im, (x, y), (x+w, y+h), (0, 0, 255), 3)
             cell = thresh[y:y+h, x:x+w]

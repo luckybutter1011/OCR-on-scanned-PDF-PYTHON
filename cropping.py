@@ -19,7 +19,7 @@ os.makedirs(path, exist_ok=True)
 
 # for image in images:
 def crop_image(pdf_name):
-        
+        flag = 0
         image_counter = 1
         # global image_counter
         images = glob.glob("./retrieve/"+pdf_name+"/*.jpg")
@@ -39,12 +39,13 @@ def crop_image(pdf_name):
                         y = [150, 150, 150, 150]
                         w = [2100, 380, 610, 300]
                         h = [7000, 7000, 7000, 7000]
+                        flag = 1
                 else:
                         x = [6060, 7140, 7300, 7660]
                         y = [150, 150, 150, 150]
                         w = [1080, 160, 610, 250]
                         h = [4100, 4100, 4100, 4100]
-                
+                        flag = 2
                 # Crop the image   
                 try:
                         for i in range(4):
@@ -54,7 +55,7 @@ def crop_image(pdf_name):
                                 image_counter = image_counter + 1
                 except:
                         return False 
-        return True
+        return flag
 
 
 # crop_image("upload.pdf")

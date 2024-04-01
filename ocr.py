@@ -52,4 +52,4 @@ def ocr_image(pdf_name):
             
         image_counter = image_counter + 1
 
-ocr_image("upload.pdf")
+# ocr_image("upload.pdf")
