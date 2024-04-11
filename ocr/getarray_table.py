@@ -73,7 +73,12 @@ def get_des_table(length):
                 else:
                     temp_array.append(temp)
                     temp = ''
+            temp_array.append(temp)
+            temp = ''
+        print(len(temp_array))
+        print("--------------------------->")
         temp_array = temp_array[::-1]
+        print(len(temp_array))
         temp_array = [replace_special_chars(s) for s in temp_array]
 
         return (temp_array[:length], temp_array[length:])
